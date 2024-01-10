@@ -9,6 +9,7 @@ import Input from "@/components/Input";
 import { CartContext } from "@/context/CartContext";
 import toast from "react-hot-toast";
 import Image from "next/image";
+import Footer from "@/components/Footer";
 
 const ColumnsWrapper = styled.div`
   display: grid;
@@ -180,6 +181,7 @@ export default function CartPage() {
             <p>We will email you when your order will be sent.</p>
           </Box>
         </Center>
+        <Footer />
       </>
     );
   }
@@ -305,6 +307,7 @@ export default function CartPage() {
           </ColumnsWrapper>
         </Center>
       </MainWrapper>
+      <Footer />
     </>
   );
 }

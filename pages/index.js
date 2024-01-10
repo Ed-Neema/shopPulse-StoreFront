@@ -6,6 +6,7 @@ import { getProducts } from "@/lib/util";
 import { mongooseConnect } from "@/lib/mongoose";
 import { Product } from "@/models/Product";
 import NewProducts from "@/components/NewProducts";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,6 +16,7 @@ export default function Home({ featuredProduct, newProducts }) {
       <Header />
       <Featured product={featuredProduct} />
       <NewProducts products={newProducts} />
+      <Footer />
     </div>
   );
 }
