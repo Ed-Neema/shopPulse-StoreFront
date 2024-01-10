@@ -49,7 +49,7 @@ const ShowAllTile = styled(Link)`
   }
 `;
 const CategoriesPage = ({ mainCategories, categoryProducts }) => {
-  console.log(categoryProducts);
+   
   return (
     <>
       <Header />
