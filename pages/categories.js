@@ -56,7 +56,7 @@ const CategoriesPage = ({ mainCategories, categoryProducts }) => {
       <Center>
         {/* <Title>All Categories</Title> */}
         {mainCategories.map((category) => (
-          <CategoryWrapper>
+          <CategoryWrapper key={category._id}>
             <CategoryTitle>
               <h2>{category.name}</h2>
               <Link href={"/category/" + category._id}>Show all</Link>
