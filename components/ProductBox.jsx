@@ -7,19 +7,26 @@ import { CartContext } from "@/context/CartContext";
 // import { CartContext } from "@/components/CartContext";
 
 const ProductWrapper = styled.div`
-${'' /* border: 1px solid #d9d9d9; */}
-margin-bottom: 2rem;
+  ${"" /* border: 1px solid #d9d9d9; */}
+  margin-bottom: 2rem;
 `;
 
 const WhiteBox = styled(Link)`
   background-color: #fff;
+  border: 1px solid #d9d9d9;
   padding: 20px;
-  height: 200px;
+  height: 300px;
   text-align: center;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
+  text-decoration: none;
+  &:hover {
+    scale: 1.1;
+    transition: 0.3s;
+  }
   img {
     max-width: 100%;
     max-height: 100px;
@@ -27,41 +34,41 @@ const WhiteBox = styled(Link)`
 `;
 
 const Title = styled(Link)`
-  font-weight: normal;
-  font-size: 0.9rem;
-  color: inherit;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #444;
   text-decoration: none;
-  margin-bottom: 1rem;
-`;
-
-const ProductInfoBox = styled.div`
-  margin-top: 0.75rem;
+  margin-top: 1rem;
 `;
 
 const PriceRow = styled.div`
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   @media screen and (min-width: 768px) {
     display: flex;
     gap: 5px;
   }
   align-items: center;
-  justify-content: space-between;
   margin-top: 1rem;
 `;
 const cartButton = styled.button`
-padding: 10px 20px;
-border-radius: 8px;
-border: 1px solid #d9d9d9;
-color: #000;
-&:hover {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid #d9d9d9;
+  color: #000;
+  &:hover {
     scale: 1.1;
     transition: 0.3s;
-}`
+  }
+`;
 
 const Price = styled.div`
   font-size: 1rem;
   font-weight: 400;
   text-align: right;
+  color: #a514ba;
+  margin-bottom: 1rem;
   @media screen and (min-width: 768px) {
     font-size: 1.2rem;
     font-weight: 700;
@@ -70,7 +77,7 @@ const Price = styled.div`
 `;
 
 export default function ProductBox({ _id, title, description, price, images }) {
-    const { addProduct } = useContext(CartContext);
+  const { addProduct } = useContext(CartContext);
   const url = "/product/" + _id;
   return (
     <ProductWrapper>
@@ -78,12 +85,11 @@ export default function ProductBox({ _id, title, description, price, images }) {
         <div>
           <img src={images?.[0]} alt={title} />
         </div>
-      </WhiteBox>
-      <ProductInfoBox>
+
         <Title href={url}>{title}</Title>
         <PriceRow>
           <Price>${price}</Price>
-        
+
           <Button
             // block="true"
             onClick={() => addProduct(_id)}
@@ -94,7 +100,7 @@ export default function ProductBox({ _id, title, description, price, images }) {
             Add to cart
           </Button>
         </PriceRow>
-      </ProductInfoBox>
+      </WhiteBox>
     </ProductWrapper>
   );
 }

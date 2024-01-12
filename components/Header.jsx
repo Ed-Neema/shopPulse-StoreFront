@@ -8,9 +8,17 @@ import { useRouter } from "next/router";
 
 const Header = () => {
   const StyledHeader = styled.header`
-    background-color: #222;
+    background-color: #fff;
+    margin-bottom: 1px;
+  `;
+
+  const MainWrapper = styled.div`
+    position: sticky;
+    top: 0;
+    left: 0;
   `;
   const Wrapper = styled.div`
+    position: sticky;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -46,36 +54,40 @@ const Header = () => {
   return (
     <StyledHeader>
       <Center>
-        <Wrapper>
-          <Link href="/">
-            <Image src="/Logo.png" width={100} height={100} />
-          </Link>
+        <MainWrapper>
+          <Wrapper>
+            <Link href="/">
+              <Image src="/Logo.png" width={100} height={100} />
+            </Link>
 
-          <StyledNav>
-            {currentPath === "/" ? (
-              <StyledLink href="/">Home</StyledLink>
-            ) : (
-              <NavLink href="/">Home</NavLink>
-            )}
-            {currentPath.includes("/product") ? (
-              <StyledLink href="/products">All products</StyledLink>
-            ) : (
-              <NavLink href="/products">All products</NavLink>
-            )}
+            <StyledNav>
+              {currentPath === "/" ? (
+                <StyledLink href="/">Home</StyledLink>
+              ) : (
+                <NavLink href="/">Home</NavLink>
+              )}
+              {currentPath.includes("/product") ? (
+                <StyledLink href="/products">All products</StyledLink>
+              ) : (
+                <NavLink href="/products">All products</NavLink>
+              )}
 
-            {currentPath.includes("/categor") ? (
-              <StyledLink href="/categories">Categories</StyledLink>
-            ) : (
-              <NavLink href="/categories">Categories</NavLink>
-            )}
+              {currentPath.includes("/categor") ? (
+                <StyledLink href="/categories">Categories</StyledLink>
+              ) : (
+                <NavLink href="/categories">Categories</NavLink>
+              )}
 
-            {currentPath.includes("cart") ? (
-              <StyledLink href="/cart">Cart ({cartProducts.length})</StyledLink>
-            ) : (
-              <NavLink href="/cart">Cart ({cartProducts.length})</NavLink>
-            )}
-          </StyledNav>
-        </Wrapper>
+              {currentPath.includes("cart") ? (
+                <StyledLink href="/cart">
+                  Cart ({cartProducts.length})
+                </StyledLink>
+              ) : (
+                <NavLink href="/cart">Cart ({cartProducts.length})</NavLink>
+              )}
+            </StyledNav>
+          </Wrapper>
+        </MainWrapper>
       </Center>
     </StyledHeader>
   );

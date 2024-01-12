@@ -9,8 +9,8 @@ import { CartContext } from "@/context/CartContext";
 
 const Featured = ({product}) => {
   const Bg = styled.div`
-    background-color: #222;
-    color: #fff;
+    background-color: #fff;
+    color: #222;
     padding: 50px 0;
   `;
   const Title = styled.h1`
@@ -22,7 +22,7 @@ const Featured = ({product}) => {
     }
   `;
   const Desc = styled.p`
-    color: #aaa;
+    color: #333;
     font-size: 1rem;
     margin-top:.5rem;
   `;

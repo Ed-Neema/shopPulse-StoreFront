@@ -80,6 +80,11 @@ const GrandTotal = styled.div`
 `;
 const MainWrapper = styled.div`
   margin-bottom: 40px;
+  height: 100%;
+`;
+
+const MainContainer = styled.div`
+height: 100%;
 `;
 export default function CartPage() {
   const { cartProducts, addProduct, removeProduct, clearCart } =

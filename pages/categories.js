@@ -37,7 +37,7 @@ const CategoryWrapper = styled.div`
 
 const ShowAllTile = styled(Link)`
   background-color: #ddd;
-  height: 200px;
+  height: 300px;
   border-radius: 10px;
   align-items: center;
   display: flex;
@@ -45,7 +45,8 @@ const ShowAllTile = styled(Link)`
   color: #555;
   text-decoration: none;
   &:hover {
-    transform: scale(1.1);
+    scale: 1.1;
+    transition: 0.3s;
   }
 `;
 const CategoriesPage = ({ mainCategories, categoryProducts }) => {
